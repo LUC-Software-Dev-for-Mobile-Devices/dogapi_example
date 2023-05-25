@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:jp_app.Models"
+             x:Class="jp_app.DogBreeds">
+    <VerticalStackLayout Spacing="10" Margin="10">
+        <ScrollView Orientation="Horizontal">
+            <CollectionView x:Name="imagelist" ItemsSource="{Binding ImageData}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding ImageURL}"  WidthRequest="300" HeightRequest="300" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+        <Entry x:Name="entryForm" Placeholder="Enter Breed" />
+        <Button Text="Submit Breed" Clicked="breedSubmission" />
+    </VerticalStackLayout>
+</ContentPage>
